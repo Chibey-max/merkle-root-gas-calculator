@@ -1,4 +1,6 @@
 "use strict";
+import { ethers } from "ethers";
+
 const provider = new ethers.JsonRpcProvider("https://ethereum.publicnode.com");
 
 async function calculateMyFees() {

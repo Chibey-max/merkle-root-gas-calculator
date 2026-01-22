@@ -1,0 +1,14 @@
+{
+  "name": "merkle-root-gas-calculator",
+  "version": "1.0.0",
+  "description": "Run merkle root generator and gas fee calculator with Node",
+  "type": "module",
+  "scripts": {
+    "start:hash": "node hashTrans.js",
+    "start:gas": "node gasFee.js"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0",
+    "ethers": "^6.7.0"
+  }
+}
