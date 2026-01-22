@@ -1,10 +1,10 @@
-import { ethers } from "ethers";
-
-const provider = new ethers.JsonRpcProvider("https://cloudflare-eth.com");
+"use strict";
+const provider = new ethers.JsonRpcProvider("https://ethereum.publicnode.com");
 
 async function calculateMyFees() {
+    try{
   const myTransaction = {
-    to: "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+    to: "0x826BDD3Db3688C48577705382E6A5a9D25b6A366",
     value: ethers.parseEther("0.01"),
   };
 
@@ -22,6 +22,10 @@ async function calculateMyFees() {
     `Price per unit: ${ethers.formatUnits(currentPrice, "gwei")} Gwei`,
   );
   console.log(`Total you will pay: ${finalAmount} ETH`);
+
+} catch(error){
+console.log(`Error:`,error.message);
+}
 }
 
 calculateMyFees();
