@@ -13,6 +13,12 @@ function createHash(data, algorithm) {
 function getMerkleRoot(transactionList, algo) {
   let currentLevel = transactionList.map((tx) => createHash(tx, algo));
 
+  // Hash 
+  console.log("Leaf hashes:");
+  transactionList.forEach((tx, idx) => {
+    console.log(`  [${idx}] ${tx} -> ${currentLevel[idx]}`);
+  });
+
   while (currentLevel.length > 1) {
     if (currentLevel.length % 2 !== 0) {
       currentLevel.push(currentLevel[currentLevel.length - 1]);
